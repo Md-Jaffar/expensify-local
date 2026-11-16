@@ -534,7 +534,7 @@ const RecurringExpenses = () => {
 
       {/* ── Modal: Add / Edit Recurring Template ────────── */}
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-end justify-center p-gutter animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[100] bg-inverse-surface/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-gutter pb-6 sm:pb-gutter animate-in fade-in duration-200">
           <div className="w-full max-w-md bg-surface-container-lowest rounded-2xl p-6 shadow-xl flex flex-col gap-4 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between">
               <h3 className="text-headline-sm font-bold text-on-surface">
@@ -684,7 +684,7 @@ const RecurringExpenses = () => {
 
       {/* ── Modal: Delete Confirmation ──────────────────── */}
       {deleteTarget && (
-        <div className="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-end justify-center p-gutter animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[100] bg-inverse-surface/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-gutter pb-6 sm:pb-gutter animate-in fade-in duration-200">
           <div className="w-full max-w-md bg-surface-container-lowest rounded-2xl p-6 shadow-xl flex flex-col gap-4">
             <h3 className="text-headline-sm font-bold text-on-surface">Delete Template?</h3>
             <p className="text-body-sm text-on-surface-variant">

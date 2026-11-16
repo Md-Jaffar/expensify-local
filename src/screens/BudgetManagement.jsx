@@ -515,7 +515,7 @@ const BudgetManagement = () => {
       {/* ── Add / Edit Budget Modal ──────────────────────── */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fade-in"
+          className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fade-in"
           onClick={() => setIsModalOpen(false)}
         >
           <div

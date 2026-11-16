@@ -668,7 +668,7 @@ const Settings = () => {
 
       {/* ── Password for Backup Modal ────────────────────── */}
       {showPasswordModal && (
-        <div className="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-end justify-center p-gutter animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[100] bg-inverse-surface/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-gutter pb-6 sm:pb-gutter animate-in fade-in duration-200">
           <div className="w-full max-w-md bg-surface-container-lowest rounded-2xl p-6 shadow-xl flex flex-col gap-4">
             <h3 className="text-headline-sm font-bold text-on-surface">Encrypt Backup (Optional)</h3>
             <p className="text-body-sm text-on-surface-variant">
@@ -703,7 +703,7 @@ const Settings = () => {
 
       {/* ── Password for Decrypt/Restore Modal ───────────── */}
       {showDecryptModal && (
-        <div className="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-end justify-center p-gutter animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[100] bg-inverse-surface/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-gutter pb-6 sm:pb-gutter animate-in fade-in duration-200">
           <div className="w-full max-w-md bg-surface-container-lowest rounded-2xl p-6 shadow-xl flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <Icon name="lock" size={24} className="text-primary" />
@@ -745,8 +745,8 @@ const Settings = () => {
 
       {/* ── Danger Zone Confirmation Modal ──────────────── */}
       {showDangerModal && (
-        <div className="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-end justify-center p-gutter animate-in fade-in duration-200">
-          <div className="w-full max-w-md bg-surface-container-lowest rounded-xl p-space-lg shadow-xl flex flex-col gap-space-md">
+        <div className="fixed inset-0 z-[100] bg-inverse-surface/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-gutter pb-6 sm:pb-gutter animate-in fade-in duration-200">
+          <div className="w-full max-w-md bg-surface-container-lowest rounded-2xl p-space-lg shadow-xl flex flex-col gap-space-md">
             <div className="w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center mx-auto">
               <Icon name="warning" size={28} />
             </div>

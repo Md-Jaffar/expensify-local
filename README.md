@@ -1,3 +1,9 @@
+# 📱 [👉 TAP HERE TO LAUNCH & INSTALL EXPENSIFY LOCAL 👈](https://md-jaffar.github.io/expensify-local/)
+
+### 🚀 Live Web App URL: **[https://md-jaffar.github.io/expensify-local/](https://md-jaffar.github.io/expensify-local/)**
+
+---
+
 # Expensify Local — Android-First Offline Personal Expense Tracker PWA
 
 Expensify Local is an Android-first, 100% offline, privacy-first personal expense tracking Progressive Web App built to match Google Stitch Material Design 3 specifications (`DESIGN.md`).

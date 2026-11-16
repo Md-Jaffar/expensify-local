@@ -1,0 +1,70 @@
+/* src/index.css — Global styles, Tailwind directives, and safe-area utilities */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Tailwind base layers ───────────────────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global base styles ─────────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    /* Prevent overscroll bounce on Android */
+    overscroll-behavior-y: contain;
+    /* Smooth momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface text-on-surface;
+    font-family: 'Inter', system-ui, sans-serif;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    /* Fill entire viewport including notch areas */
+    min-height: 100dvh;
+  }
+
+  /* Hide scrollbars globally for a native-app feel */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
+/* ── Utility classes ────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Safe area inset padding for iPhone notch / Android status bar */
+  .pt-safe {
+    padding-top: max(env(safe-area-inset-top, 0px), 0px);
+  }
+  .pb-safe {
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 8px);
+  }
+  .pl-safe {
+    padding-left: max(env(safe-area-inset-left, 0px), 0px);
+  }
+  .pr-safe {
+    padding-right: max(env(safe-area-inset-right, 0px), 0px);
+  }
+
+  /* Hide scrollbars via class */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Tabular numeric figures for currency amounts */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}

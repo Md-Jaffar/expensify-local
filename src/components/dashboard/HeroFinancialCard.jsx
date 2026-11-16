@@ -22,7 +22,7 @@ const HeroFinancialCard = ({
   const balanceDec = (Math.abs(balance) % 1).toFixed(2).substring(1);
 
   return (
-    <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary-container via-primary to-[#004741] text-on-primary p-5 shadow-hero">
+    <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary-container via-primary to-[#090d16] text-on-primary p-5 shadow-hero">
       {/* ── Ambient organic decorative shapes ─────────── */}
       <div className="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-secondary-container/15 pointer-events-none blur-2xl" />
       <div className="absolute -left-8 -top-8 w-36 h-36 rounded-full bg-on-primary-container/10 pointer-events-none blur-xl" />

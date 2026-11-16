@@ -62,8 +62,8 @@ assert(manifestContent.display === 'standalone', 'Manifest display is "standalon
 assert(manifestContent.orientation === 'portrait', 'Manifest orientation is "portrait"');
 assert(manifestContent.start_url === '/expensify-local/', 'Manifest start_url is scoped to /expensify-local/');
 assert(manifestContent.scope === '/expensify-local/', 'Manifest scope is scoped to /expensify-local/');
-assert(manifestContent.theme_color === '#0f766e', 'Manifest theme_color matches Stitch brand token #0f766e');
-assert(manifestContent.background_color === '#faf8ff', 'Manifest background_color matches Stitch background token #faf8ff');
+assert(manifestContent.theme_color === '#0f172a', 'Manifest theme_color matches Modern Slate token #0f172a');
+assert(manifestContent.background_color === '#f8fafc', 'Manifest background_color matches Modern Canvas token #f8fafc');
 
 // Check icons in manifest
 const icons = manifestContent.icons || [];

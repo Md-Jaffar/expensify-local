@@ -1,5 +1,15 @@
-// tailwind.config.js — Full design token configuration from DESIGN.md
+// tailwind.config.js — Modern Emerald & Slate Fintech Theme Configuration
 /** @type {import('tailwindcss').Config} */
+
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgb(var(${variableName}) / ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
+
 export default {
   darkMode: 'class',
   content: [
@@ -8,41 +18,51 @@ export default {
   ],
   theme: {
     extend: {
-      // ─── Color tokens from DESIGN.md Section 2 ───────────────────────────
+      // ─── Modern Emerald & Slate Dynamic Color Tokens ─────────────────────
       colors: {
         // Brand Semantic
-        'primary':                   '#005c55',
-        'primary-container':         '#0f766e',
-        'on-primary':                '#ffffff',
-        'on-primary-container':      '#a3faef',
-        'secondary':                 '#006c49',
-        'secondary-container':       '#6cf8bb',
-        'on-secondary-container':    '#00714d',
-        'tertiary':                  '#734700',
-        'tertiary-fixed':            '#ffddb8',
-        'tertiary-fixed-dim':        '#ffb95f',
-        'error':                     '#ba1a1a',
-        'error-container':           '#ffdad6',
-        'on-error-container':        '#93000a',
-        // Surface Hierarchy
-        'background':                '#faf8ff',
-        'surface':                   '#faf8ff',
-        'surface-container-lowest':  '#ffffff',
-        'surface-container-low':     '#f2f3ff',
-        'surface-container':         '#eaedff',
-        'surface-container-high':    '#e2e7ff',
-        'surface-container-highest': '#dae2fd',
-        'surface-dim':               '#d2d9f4',
-        // Text / Outline
-        'on-surface':                '#131b2e',
-        'on-surface-variant':        '#3e4947',
-        'outline':                   '#6e7977',
-        'outline-variant':           '#bdc9c6',
-        'inverse-surface':           '#283044',
-        'inverse-on-surface':        '#eef0ff',
+        'primary':                   withOpacity('--color-primary'),
+        'primary-container':         withOpacity('--color-primary-container'),
+        'on-primary':                withOpacity('--color-on-primary'),
+        'on-primary-container':      withOpacity('--color-on-primary-container'),
+        
+        // Positive / Income (Emerald 500)
+        'secondary':                 withOpacity('--color-secondary'),
+        'secondary-container':       withOpacity('--color-secondary-container'),
+        'on-secondary':              withOpacity('--color-on-secondary'),
+        'on-secondary-container':    withOpacity('--color-on-secondary-container'),
+        
+        // Secondary / Interactive (Sky 500)
+        'tertiary':                  withOpacity('--color-tertiary'),
+        'tertiary-fixed':            withOpacity('--color-tertiary-fixed'),
+        'tertiary-fixed-dim':        withOpacity('--color-tertiary-fixed-dim'),
+        
+        // Warning / Expense (Rose 500)
+        'error':                     withOpacity('--color-error'),
+        'error-container':           withOpacity('--color-error-container'),
+        'on-error':                  withOpacity('--color-on-error'),
+        'on-error-container':        withOpacity('--color-on-error-container'),
+        
+        // Surface & Canvas Hierarchy
+        'background':                withOpacity('--color-background'),
+        'surface':                   withOpacity('--color-surface'),
+        'surface-container-lowest':  withOpacity('--color-surface-container-lowest'),
+        'surface-container-low':     withOpacity('--color-surface-container-low'),
+        'surface-container':         withOpacity('--color-surface-container'),
+        'surface-container-high':    withOpacity('--color-surface-container-high'),
+        'surface-container-highest': withOpacity('--color-surface-container-highest'),
+        'surface-dim':               withOpacity('--color-surface-dim'),
+        
+        // Typography & Outlines
+        'on-surface':                withOpacity('--color-on-surface'),
+        'on-surface-variant':        withOpacity('--color-on-surface-variant'),
+        'outline':                   withOpacity('--color-outline'),
+        'outline-variant':           withOpacity('--color-outline-variant'),
+        'inverse-surface':           withOpacity('--color-inverse-surface'),
+        'inverse-on-surface':        withOpacity('--color-inverse-on-surface'),
       },
 
-      // ─── Spacing tokens from DESIGN.md Section 4 ─────────────────────────
+      // ─── Spacing tokens ──────────────────────────────────────────────────
       spacing: {
         'space-xs':  '0.25rem',  // 4px
         'space-sm':  '0.5rem',   // 8px
@@ -52,7 +72,7 @@ export default {
         'gutter':    '1rem',     // 16px horizontal page margin
       },
 
-      // ─── Font size tokens from DESIGN.md Section 3 ───────────────────────
+      // ─── Font size tokens ────────────────────────────────────────────────
       fontSize: {
         'display-currency':        ['38px', { lineHeight: '44px', letterSpacing: '-0.03em', fontWeight: '700' }],
         'display-currency-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.02em', fontWeight: '700' }],
@@ -68,31 +88,29 @@ export default {
         'numeral-dense':           ['15px', { lineHeight: '20px', letterSpacing: '-0.01em',  fontWeight: '600' }],
       },
 
-      // ─── Border radius tokens from DESIGN.md Section 5 ───────────────────
-      // Note: Tailwind's defaults are overridden here to match DESIGN.md
+      // ─── Border radius tokens ────────────────────────────────────────────
       borderRadius: {
         DEFAULT:  '1rem',    // 16px — card containers
         'sm':     '0.5rem',  // 8px
         'md':     '1rem',    // 16px
         'lg':     '2rem',    // 32px — main stat cards, metric panels
         'xl':     '3rem',    // 48px — reserved
-        '2xl':    '1.5rem',  // 24px — category tiles, stat grid cards (matches Tailwind 2xl=24px)
+        '2xl':    '1.5rem',  // 24px — category tiles, stat grid cards
         'full':   '9999px',  // Pills, FABs, avatars
-        // Keep standard ones accessible
         'inner':  '0.75rem', // 12px — input fields, inner nested rows
       },
 
-      // ─── Font family ──────────────────────────────────────────────────────
+      // ─── Font family ─────────────────────────────────────────────────────
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
 
-      // ─── Box shadows from DESIGN.md Section 6 ────────────────────────────
+      // ─── Box shadows ─────────────────────────────────────────────────────
       boxShadow: {
-        'appbar': '0 1px 8px rgba(0,0,0,0.03)',
-        'bottomnav': '0 -4px 16px rgba(19,27,46,0.06)',
-        'hero': '0 8px 24px -4px rgba(15,118,110,0.35)',
-        'fab': '0 6px 16px -2px rgba(15,118,110,0.35)',
+        'appbar': '0 1px 8px rgba(15,23,42,0.04)',
+        'bottomnav': '0 -4px 16px rgba(15,23,42,0.06)',
+        'hero': '0 8px 24px -4px rgba(15,23,42,0.30)',
+        'fab': '0 6px 16px -2px rgba(16,185,129,0.35)',
       },
     },
   },

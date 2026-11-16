@@ -65,7 +65,7 @@ const Onboarding = () => {
     <div className="min-h-screen flex flex-col bg-background text-on-surface select-none">
       {/* ── STEP 1: Welcome ───────────────────────────── */}
       {step === 1 && (
-        <div className="flex-1 flex flex-col justify-between p-gutter bg-gradient-to-br from-primary-container via-primary to-[#004741] text-on-primary">
+        <div className="flex-1 flex flex-col justify-between p-gutter bg-gradient-to-br from-primary-container via-primary to-[#090d16] text-on-primary">
           <div className="pt-12 flex flex-col items-center text-center">
             {/* App Logo */}
             <div className="w-20 h-20 rounded-full bg-on-primary/15 backdrop-blur-md flex items-center justify-center mb-6 shadow-hero">

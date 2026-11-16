@@ -40,7 +40,7 @@ const BottomNav = () => {
                 <button
                   onClick={() => navigate('/add')}
                   className="w-14 h-14 rounded-full
-                             bg-primary-container text-on-primary
+                             bg-secondary text-on-secondary
                              flex items-center justify-center
                              shadow-fab ring-4 ring-surface
                              -translate-y-3
@@ -69,19 +69,19 @@ const BottomNav = () => {
               <div
                 className={`w-12 h-7 rounded-full flex items-center justify-center mb-0.5
                             transition-colors
-                            ${active ? 'bg-surface-container-high' : 'bg-transparent'}`}
+                            ${active ? 'bg-secondary/15' : 'bg-transparent'}`}
               >
                 <Icon
                   name={tab.icon}
                   size={22}
                   fill={active ? 1 : 0}
-                  className={active ? 'text-primary' : 'text-on-surface-variant'}
+                  className={active ? 'text-secondary' : 'text-on-surface-variant'}
                 />
               </div>
               {/* Tab label */}
               <span
                 className={`text-label-sm transition-colors
-                            ${active ? 'text-primary font-bold' : 'text-on-surface-variant'}`}
+                            ${active ? 'text-secondary font-bold' : 'text-on-surface-variant'}`}
               >
                 {tab.label}
               </span>

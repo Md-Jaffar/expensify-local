@@ -13,16 +13,16 @@ function Generate-Icon {
     $g.TextRenderingHint = [System.Drawing.Text.TextRenderingHint]::AntiAliasGridFit
     $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
 
-    # Primary Teal: #0f766e
-    $tealBrush = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(255, 15, 118, 110))
-    # Dark Teal Circle: #005c55
-    $darkTealBrush = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(255, 0, 92, 85))
+    # Primary Deep Slate: #0f172a
+    $slateBrush = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(255, 15, 23, 42))
+    # Positive Emerald Circle: #10b981
+    $emeraldBrush = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(255, 16, 185, 129))
     # White Text
     $whiteBrush = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::White)
 
     if ($maskable) {
         # Full bleed background for adaptive icons
-        $g.FillRectangle($tealBrush, 0, 0, $size, $size)
+        $g.FillRectangle($slateBrush, 0, 0, $size, $size)
     } else {
         # Rounded rectangle for any icon
         $radius = [int]($size * 0.22)
@@ -33,14 +33,14 @@ function Generate-Icon {
         $path.AddArc($size - $d, $size - $d, $d, $d, 0, 90)
         $path.AddArc(0, $size - $d, $d, $d, 90, 90)
         $path.CloseFigure()
-        $g.FillPath($tealBrush, $path)
+        $g.FillPath($slateBrush, $path)
         $path.Dispose()
     }
 
     # Center circle (scaled to fit well within safe area)
     $margin = [int]($size * (76.0 / 512.0))
     $circleSize = $size - ($margin * 2)
-    $g.FillEllipse($darkTealBrush, $margin, $margin, $circleSize, $circleSize)
+    $g.FillEllipse($emeraldBrush, $margin, $margin, $circleSize, $circleSize)
 
     # Rupee Symbol: ₹
     $fontSize = [int]($size * (240.0 / 512.0))
@@ -55,8 +55,8 @@ function Generate-Icon {
     $bmp.Save($outPath, [System.Drawing.Imaging.ImageFormat]::Png)
     $g.Dispose()
     $bmp.Dispose()
-    $tealBrush.Dispose()
-    $darkTealBrush.Dispose()
+    $slateBrush.Dispose()
+    $emeraldBrush.Dispose()
     $whiteBrush.Dispose()
     $font.Dispose()
     $sf.Dispose()

@@ -1,5 +1,92 @@
-/* src/index.css — Global styles, Tailwind directives, and safe-area utilities */
+/* src/index.css — Modern Emerald & Slate Theme System, Tailwind directives, and safe-area utilities */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Modern Emerald & Slate Theme Variables ────────────────────────────── */
+:root {
+  /* Brand Primary / Trust (Deep Slate 900 / 800) */
+  --color-primary: 15 23 42;                 /* #0F172A */
+  --color-primary-container: 30 41 59;       /* #1E293B */
+  --color-on-primary: 255 255 255;          /* #FFFFFF */
+  --color-on-primary-container: 226 232 240; /* #E2E8F0 */
+
+  /* Positive / Income Accent (Emerald 500) */
+  --color-secondary: 16 185 129;             /* #10B981 */
+  --color-secondary-container: 209 250 229;  /* #D1FAE5 */
+  --color-on-secondary: 255 255 255;        /* #FFFFFF */
+  --color-on-secondary-container: 6 95 70;   /* #065F46 */
+
+  /* Secondary / Interactive Accent (Sky 500) */
+  --color-tertiary: 14 165 233;              /* #0EA5E9 */
+  --color-tertiary-fixed: 224 242 254;       /* #E0F2FE */
+  --color-tertiary-fixed-dim: 186 230 253;   /* #BAE6FD */
+
+  /* Warning / Expense Accent (Rose / Coral 500) */
+  --color-error: 244 63 94;                  /* #F43F5E */
+  --color-error-container: 255 228 230;      /* #FFE4E6 */
+  --color-on-error: 255 255 255;            /* #FFFFFF */
+  --color-on-error-container: 159 18 57;     /* #9F1239 */
+
+  /* Surface & Canvas Hierarchy (Slate 50 & Pure White) */
+  --color-background: 248 250 252;           /* #F8FAFC (Slate 50) */
+  --color-surface: 248 250 252;              /* #F8FAFC */
+  --color-surface-container-lowest: 255 255 255; /* #FFFFFF (Pure White Card) */
+  --color-surface-container-low: 241 245 249; /* #F1F5F9 (Slate 100) */
+  --color-surface-container: 226 232 240;    /* #E2E8F0 (Slate 200) */
+  --color-surface-container-high: 203 213 225; /* #CBD5E1 (Slate 300) */
+  --color-surface-container-highest: 148 163 184; /* #94A3B8 (Slate 400) */
+  --color-surface-dim: 226 232 240;
+
+  /* Typography & Outlines (Dark Charcoal #0F172A & Muted Slate #64748B) */
+  --color-on-surface: 15 23 42;              /* #0F172A */
+  --color-on-surface-variant: 100 116 139;   /* #64748B */
+  --color-outline: 148 163 184;              /* #94A3B8 */
+  --color-outline-variant: 226 232 240;      /* #E2E8F0 */
+  --color-inverse-surface: 15 23 42;
+  --color-inverse-on-surface: 248 250 252;
+}
+
+.dark {
+  /* Brand Primary in Dark Mode */
+  --color-primary: 30 41 59;                 /* #1E293B */
+  --color-primary-container: 15 23 42;       /* #0F172A */
+  --color-on-primary: 255 255 255;
+  --color-on-primary-container: 241 245 249;
+
+  /* Positive / Income Accent (Emerald in Dark Mode) */
+  --color-secondary: 52 211 153;             /* #34D399 (Emerald 400) */
+  --color-secondary-container: 6 78 59;      /* #064E3B */
+  --color-on-secondary: 255 255 255;
+  --color-on-secondary-container: 167 243 208;
+
+  /* Interactive Accent in Dark Mode */
+  --color-tertiary: 56 189 248;              /* #38BDF8 (Sky 400) */
+  --color-tertiary-fixed: 12 74 110;
+  --color-tertiary-fixed-dim: 3 105 161;
+
+  /* Warning / Expense Accent (Rose in Dark Mode) */
+  --color-error: 251 113 133;                /* #FB7185 (Rose 400) */
+  --color-error-container: 136 19 55;        /* #881337 */
+  --color-on-error: 255 255 255;
+  --color-on-error-container: 255 228 230;
+
+  /* Dark Canvas & Slate Cards */
+  --color-background: 11 15 25;              /* #0B0F19 (Deep Carbon) */
+  --color-surface: 11 15 25;                 /* #0B0F19 */
+  --color-surface-container-lowest: 30 41 59; /* #1E293B (Slate 800 Cards) */
+  --color-surface-container-low: 23 32 51;   /* #172033 */
+  --color-surface-container: 30 41 59;       /* #1E293B */
+  --color-surface-container-high: 51 65 85;  /* #334155 */
+  --color-surface-container-highest: 71 85 105; /* #475569 */
+  --color-surface-dim: 23 32 51;
+
+  /* Typography in Dark Mode */
+  --color-on-surface: 248 250 252;           /* #F8FAFC */
+  --color-on-surface-variant: 148 163 184;   /* #94A3B8 */
+  --color-outline: 100 116 139;              /* #64748B */
+  --color-outline-variant: 51 65 85;         /* #334155 */
+  --color-inverse-surface: 248 250 252;
+  --color-inverse-on-surface: 11 15 25;
+}
 
 /* ── Tailwind base layers ───────────────────────────────────────────────── */
 @tailwind base;

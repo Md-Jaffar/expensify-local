@@ -12,6 +12,7 @@ import { useToast } from '../contexts/ToastContext';
 import { encryptData, decryptData } from '../utils/crypto';
 import { getLearnedRules, saveLearnedRules } from '../utils/categorization';
 import { validateAmount } from '../utils/currency';
+import InstallAppBanner from '../components/ui/InstallAppBanner';
 
 const Settings = () => {
   const navigate = useNavigate();
@@ -458,6 +459,9 @@ const Settings = () => {
           </p>
         </div>
       </section>
+
+      {/* ── In-App Install App Banner ─────────────────────── */}
+      <InstallAppBanner />
 
       {/* ── Advanced Expense Management & Customization ── */}
       <section className="flex flex-col gap-space-sm">

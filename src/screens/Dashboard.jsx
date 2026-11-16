@@ -10,6 +10,7 @@ import QuickStatsGrid from '../components/dashboard/QuickStatsGrid';
 import BudgetProgressCard from '../components/dashboard/BudgetProgressCard';
 import SpendingBreakdownCard from '../components/dashboard/SpendingBreakdownCard';
 import RecentActivitySection from '../components/dashboard/RecentActivitySection';
+import InstallAppBanner from '../components/ui/InstallAppBanner';
 import { db } from '../db/db';
 import { useProfile } from '../contexts/ProfileContext';
 import { getGreeting, isToday, isThisWeek, getMonthYear, currentMonthYearKey, toMonthYearKey } from '../utils/date';
@@ -173,6 +174,9 @@ const Dashboard = () => {
           <Icon name="arrow_drop_down" size={16} className="text-on-surface-variant" />
         </button>
       </div>
+
+      {/* ── In-App PWA Install Banner ───────────────────────── */}
+      <InstallAppBanner />
 
       {/* ── Due Recurring Alert Banner (Confirmation-Based) ── */}
       {dueRecurring.length > 0 && (

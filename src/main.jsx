@@ -8,13 +8,16 @@ import './index.css';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { ToastProvider } from './contexts/ToastContext';
 import { ProfileProvider } from './contexts/ProfileContext';
+import { InstallPromptProvider } from './contexts/InstallPromptContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>
       <ToastProvider>
         <ProfileProvider>
-          <App />
+          <InstallPromptProvider>
+            <App />
+          </InstallPromptProvider>
         </ProfileProvider>
       </ToastProvider>
     </ThemeProvider>

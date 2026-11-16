@@ -99,9 +99,7 @@ Once your code is pushed, enable GitHub Pages to deploy using GitHub Actions:
 
 Once the GitHub Actions workflow finishes (typically takes ~45 seconds), your application will be live at:
 
-$$\mathbf{https://<YOUR\_USERNAME>.github.io/expensify-local/}$$
-
-*(Example: If your GitHub handle is `MohammedJaffar`, the URL is `https://mohammedjaffar.github.io/expensify-local/`)*
+$$\mathbf{https://md-jaffar.github.io/expensify-local/}$$
 
 > [!NOTE]
 > Because the application uses `HashRouter`, deep links (e.g. `https://<YOUR_USERNAME>.github.io/expensify-local/#/history` or `/#/insights`) reload seamlessly without HTTP 404 errors.
